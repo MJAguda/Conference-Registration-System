@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ConferenceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ConferenceApplication.class, args);
+		SpringApplication. run(ConferenceApplication.class, args);
 	}
 
 }
