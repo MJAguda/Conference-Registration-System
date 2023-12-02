@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; ISO-8859-1" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,7 +13,8 @@
             <table>
                 <tr>
                     <td>
-                        Name:
+                        <!-- Internationalize Name -->
+                        <spring:message code="name"/>
                     </td>
                     <td>
                         <form:input path="name" />
@@ -19,7 +22,9 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" value="Add Registration">
+                        <!-- Internationalize Button -->
+                        <spring:message code="save.changes" var="saveChangesMsg" />
+                        <input type="submit" value="${saveChangesMsg}" />
                     </td>
                 </tr>
             </table>
