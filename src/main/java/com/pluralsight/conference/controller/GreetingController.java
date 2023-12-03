@@ -14,4 +14,11 @@ public class GreetingController {
         model.put("message", "Hello Jayson");
         return "greeting";
     }
+
+    // Display the view for http://localhost:8080/thyme
+    @GetMapping("thyme")
+    public String thyme(Map<String, Object> model){
+        model.put("message", "Hello Thymeleaf");
+        return "thyme";
+    }
 }
