@@ -5,6 +5,7 @@ import java.util.Locale;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -13,6 +14,12 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @Configuration
 public class ConferenceConfig implements WebMvcConfigurer{
+
+    // This method will allow CORS for all the endpoints
+    @Override
+    public void addCorsMappings(CorsRegistry registry){
+        registry.addMapping("/**");
+    }
 
     // Look for a static file under this static directory 
     // http://localhost:8080/files/ps.pdf
