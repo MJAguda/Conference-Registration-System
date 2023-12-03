@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './App.css';
 class App extends React.Component{
@@ -7,13 +8,13 @@ class App extends React.Component{
     
     this.state = {
       items: [],
-      DataisLoaded: false,
+      DataisLoaded: false
     }
   }
 
   // ComponentDidMount is used to execute the code
   componentDidMount(){
-    fetch('http://localhost:8080/api/conferences')
+    fetch('http://localhost:8080/api/v1/user/hello')
     .then(res => res.json())
     .then(json => {
       this.setState({
@@ -23,7 +24,7 @@ class App extends React.Component{
     })
   }
   render(){
-    const {DataisLoaded, items} = this.state;
+    const { DataisLoaded, items} = this.state;
     if(!DataisLoaded) return <div>
       <h1> Please wait ... </h1> </div>;
 
@@ -37,3 +38,5 @@ class App extends React.Component{
     );
   }
 }
+
+export default App;
