@@ -31,12 +31,13 @@ public class ConferenceConfig implements WebMvcConfigurer{
     //     return resolver;
     // }
 
+    // Internationalization
     @Override
     public void addInterceptors(InterceptorRegistry registry){
         registry.addInterceptor(localeChangeInterceptor());
     }
 
-    // Start with the default local of US
+    // If the user changes the local, it will be stored in the session
     @Bean
     public LocaleResolver localeResolver(){
         SessionLocaleResolver slr = new SessionLocaleResolver();
@@ -44,7 +45,7 @@ public class ConferenceConfig implements WebMvcConfigurer{
         return slr;
     }
 
-    // Set the parameter to look for on the url as lang
+    // This interceptor will look for a parameter called lang
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor(){
         LocaleChangeInterceptor lci = new LocaleChangeInterceptor();
