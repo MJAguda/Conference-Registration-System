@@ -11,7 +11,7 @@
                 color: #ff0000;
             }
 
-            .errorblock {
+            .erroblock {
                 color: #000;
                 background-color: #ffEEEE;
                 border: 3px solid #ff0000;
@@ -32,6 +32,9 @@
                     </td>
                     <td>
                         <form:input path="name" />
+                    </td>
+                    <td
+                        <form:errors path="name" cssClass="error" />
                     </td>
                 </tr>
                 <tr>
